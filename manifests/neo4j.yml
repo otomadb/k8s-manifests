@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: otomadb-neo4j
+  labels:
+    app: otomadb-neo4j
+spec:
+  type: ClusterIP
+  ports:
+    - name: neo4j
+      port: 7687
+      targetPort: 7687
+  selector:
+    app: otomadb-neo4j
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: otomadb-neo4j
+spec:
+  serviceName: otomadb-neo4j
+  selector:
+    matchLabels:
+      app: otomadb-neo4j
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: otomadb-neo4j
+    spec:
+      containers:
+        - name: neo4j
+          image: neo4j:5.2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7687
+          env:
+            - name: NEO4J_AUTH
+              value: neo4j/password
+          volumeMounts:
+            - name: neo4j-data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: neo4j-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi

@@ -26,8 +26,6 @@
       in {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
-            cue
-            cuelsp
           ];
         };
       }
