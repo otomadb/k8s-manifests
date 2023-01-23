@@ -9,8 +9,8 @@ spec:
     app: otomadb-api
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 4000
+      targetPort: 4000
       nodePort: 30080
 ---
 apiVersion: apps/v1
@@ -38,8 +38,12 @@ spec:
           image: ghcr.io/otomad-database/otomad-database/api
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 4000
           env:
+            - name: PORT
+              value: "4000"
+            - name: HOST
+              value: "0.0.0.0"
             - name: DATABASE_URL
               value: postgres://user:pass@otomadb-postgres:5432/otomadb
             - name: NEO4J_URL
