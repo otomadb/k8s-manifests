@@ -28,13 +28,13 @@ spec:
     spec:
       initContainers:
         - name: migrations
-          image: ghcr.io/otomad-database/otomad-database/api-migration
+          image: ghcr.io/otomad-database/otomad-database/api-migration:latest
           env:
             - name: DATABASE_URL
               value: postgres://user:pass@otomadb-postgres:5432/otomadb
       containers:
         - name: api
-          image: ghcr.io/otomad-database/otomad-database/api
+          image: ghcr.io/otomad-database/otomad-database/api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
