@@ -35,11 +35,20 @@ spec:
               containerPort: 5432
           env:
             - name: POSTGRES_DB
-              value: otomadb
+              valueFrom:
+                configMapKeyRef:
+                  name: otomadb-postgres-config
+                  key: database
             - name: POSTGRES_USER
-              value: user
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-postgres-auth
+                  key: username
             - name: POSTGRES_PASSWORD
-              value: pass
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-postgres-auth
+                  key: password
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgres/data
