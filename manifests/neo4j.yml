@@ -7,9 +7,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - name: neo4j
+    - name: neo4j-bolt
       port: 7687
-      targetPort: 7687
+      targetPort: neo4j-bolt
   selector:
     app: otomadb-neo4j
 ---
@@ -33,7 +33,8 @@ spec:
           image: neo4j:5.2
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 7687
+            - name: neo4j-bolt
+              containerPort: 7687
           env:
             - name: NEO4J_AUTH
               value: neo4j/password
