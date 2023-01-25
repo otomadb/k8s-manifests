@@ -27,11 +27,29 @@ spec:
         app: otomadb-api
     spec:
       initContainers:
-        - name: migrations
+        - name: migration
           image: ghcr.io/otomad-database/otomad-database/api-migration:latest
           env:
-            - name: DATABASE_URL
-              value: postgres://user:pass@otomadb-postgres:5432/otomadb
+            # Postgres
+            - name: POSTGRES_HOST
+              value: "otomadb-postgres"
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: otomadb-postgres-config
+                  key: database
+            - name: POSTGRES_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-postgres-auth
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-postgres-auth
+                  key: password
       containers:
         - name: api
           image: ghcr.io/otomad-database/otomad-database/api:latest
@@ -39,16 +57,45 @@ spec:
           ports:
             - name: api-http
               containerPort: 4000
+          resources:
+            limits:
+              cpu: "4"
+              memory: "512Mi"
           env:
             - name: PORT
               value: "4000"
             - name: HOST
               value: "0.0.0.0"
-            - name: DATABASE_URL
-              value: postgres://user:pass@otomadb-postgres:5432/otomadb
+            # Postgres
+            - name: POSTGRES_HOST
+              value: "otomadb-postgres"
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: otomadb-postgres-config
+                  key: database
+            - name: POSTGRES_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-postgres-auth
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-postgres-auth
+                  key: password
+            # Neo4j
             - name: NEO4J_URL
               value: bolt://otomadb-neo4j:7687
             - name: NEO4J_USERNAME
-              value: neo4j
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-neo4j-auth
+                  key: username
             - name: NEO4J_PASSWORD
-              value: password
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-neo4j-auth
+                  key: password
