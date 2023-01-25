@@ -31,6 +31,7 @@
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
             yamlfmt.packages.${system}.yamlfmt
+            kubectl
           ];
         };
       }
