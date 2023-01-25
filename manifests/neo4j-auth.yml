@@ -1,8 +1,16 @@
-apiVersion: v1
-kind: Secret
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
+  creationTimestamp: null
   name: otomadb-neo4j-auth
-type: Opaque
-stringData:
-  username: neo4j
-  password: password
+  namespace: default
+spec:
+  encryptedData:
+    password: AgBh5Cq3Tb+unbR/cuAgMMwI8M8R+xs8ote/1oT5TkPi0g26EBChvqgMWu0tvg8u0ZP1G/r5HotyJ1MCVh6uqUQmDixj36ILtNH9tYMt21zFyBDReOwW48lMGQPLvC5HJdb9+BWZdeZxZuXY0BD6p/Je5DciAsn4zVz60hE7LSpv7+71Z1q36mIEhqEnGXvtTBvPA4tz6akO3s07UyvpUpEU490yFxBMx+qhlPCOZFr7y2gZT4OOgvTLzaWwD2kK/8RXfiF9BW7Wt53x87K7ZcpjI2tpeyuX37Izy7O8GfdWCeudu4yHLZrRBKaGi67H1C5YS+EK8Gk4po68OJ5Ge/KNmpCBZMKLVoFM9gxM8EMHHkxM7+F7kTUpyfFBADAy6o4X3dBLKpKAs+1KYg8La9exx71f0EaLA0xA/BcwQOoHGuS99ukHh6RTmm+KBHwd6H+9lF0k0vTWqjwOvwwajr+quSrQdCQS0YOrWYxUTp+LaMByXzjZj1g8lLf3OhfMNkkeJI5RzY7fU2kUV4/8VSfbIztnVpVQsPqWYb9tjoJuJ9G/O32BZqhv43sl3bfU3maatO18acuyXBmy2WWg1vTJ8dd0fAKIrinFwDDMIcZ+7PVQf4o4DUW0PL5OyHP5zGWD9NZXtY+ZqhlWp3HsAAEx00Qk6pr7LhGNu5N0LAGK0jfWt+c3rmYVVjpT5wZ6o5mxbzKKYgeho3GDghaR6eovP0u8gLVZGKsS7kLhOaow4w==
+    username: AgA9iwScZ5vLmLQKMLDZjIfCQoff1YYAnp8hexG7uydqX/tozM7iJFpaB0MgqoqBUp4HwGjdBh5uItE2t60LYA8Ea6G54b/uwJ2QilXErTmv7p9gbXEgJX4CruKmsNNC48cwTRmBkwMu6m6UecPoV2M+xd8bVRcC14y+n5KlFeA95n7FYyPeO6Z9kAYzr39GlXX45gfNrpH/RgePYzlWenyNYFS9w3QVd4f9bUntIrNQ1omRHPeWlFaULo9y+ANFKZRDN0ldarF6qASwJeHQ0x+0HyK+TVHC/1RF12lgDif9PURnPequIp1Z3hkMtFEnL6L2zTKyLZwHbrZdGob2fx2ERWGtyKNdhNCJ+S9A9Od5v4ePOoHYO0Nilw2zBuviafJkmDVE+xbubZuRsi4Ccm+GuBV9bBvL8qpS+Jxbg5uwNbhFkulkeecTdViq3FmyGo9sfk0MXpzeUcfXmgTr1pL+JsxCA0OH6q2TCZ7fms7AosEAm95T76nqhOy56+F0pAsZZ1HU6Rab/IBuehv75hfW3TH7YJbvguCu6izdqvikZlSuLdTtPmxebwDRYJIavMoD1fChisuUI/WLO1pFiMtpBBfuXJM4djS1sQltU60jxZ5ofn3NcYF5C0eRYJ34nE+F/d+WEIVCoUHDWwVRxLbs7e6oVF0fiHEl3u5EsLascuF5KC1eKVE67ZNrlZhmgZ53UJ69mQ==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: otomadb-neo4j-auth
+      namespace: default
+    type: Opaque

@@ -30,8 +30,10 @@
       in {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
-            yamlfmt.packages.${system}.yamlfmt
+            alejandra
             kubectl
+            kubeseal
+            yamlfmt.packages.${system}.yamlfmt
           ];
         };
       }
