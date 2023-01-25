@@ -36,8 +36,18 @@ spec:
             - name: neo4j-bolt
               containerPort: 7687
           env:
+            - name: INTERNAL_NEO4J_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-neo4j-auth
+                  key: username
+            - name: INTERNAL_NEO4J_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: otomadb-neo4j-auth
+                  key: password
             - name: NEO4J_AUTH
-              value: neo4j/password
+              value: $(INTERNAL_NEO4J_USERNAME)/$(INTERNAL_NEO4J_PASSWORD)
           volumeMounts:
             - name: neo4j-data
               mountPath: /data

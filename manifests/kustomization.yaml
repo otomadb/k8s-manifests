@@ -1,8 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  # postgres
   - postgres-auth.yml
   - postgres-config.yml
   - postgres.yml
+  # neo4j
   - neo4j.yml
+  - neo4j-auth.yml
+  # api
   - api.yml
