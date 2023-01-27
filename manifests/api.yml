@@ -28,7 +28,7 @@ spec:
     spec:
       initContainers:
         - name: migration
-          image: ghcr.io/otomad-database/otomad-database/api-migration:latest
+          image: ghcr.io/otomad-database/api-postgres-migration:build-57
           env:
             # Postgres
             - name: POSTGRES_HOST
@@ -50,9 +50,11 @@ spec:
                 secretKeyRef:
                   name: otomadb-postgres-auth
                   key: password
+            - name: PRISMA_DATABASE_URL
+              value: postgres://$(POSTGRES_USERNAME):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DATABASE)
       containers:
         - name: api
-          image: ghcr.io/otomad-database/otomad-database/api:latest
+          image: ghcr.io/otomad-database/api:build-57
           imagePullPolicy: Always
           ports:
             - name: api-http
@@ -86,6 +88,8 @@ spec:
                 secretKeyRef:
                   name: otomadb-postgres-auth
                   key: password
+            - name: PRISMA_DATABASE_URL
+              value: postgres://$(POSTGRES_USERNAME):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DATABASE)
             # Neo4j
             - name: NEO4J_URL
               value: bolt://otomadb-neo4j:7687
