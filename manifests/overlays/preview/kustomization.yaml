@@ -7,3 +7,5 @@ bases:
   - ../../base
 resources:
   - ./api-service.yml
+  - ./neo4j-auth.yml
+  - ./postgres-auth.yml
