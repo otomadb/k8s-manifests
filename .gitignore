@@ -8,3 +8,10 @@ result
 
 # secret
 *.raw.yml
+
+# dump
+dump/
+
+# check
+preview.yml
+production.yml
