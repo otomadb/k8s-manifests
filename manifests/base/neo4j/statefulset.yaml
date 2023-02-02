@@ -21,6 +21,8 @@ spec:
             - name: neo4j-bolt
               containerPort: 7687
           env:
+            - name: NEO4J_server_config_strict__validation_enabled
+              value: "false"
             - name: INTERNAL_NEO4J_USERNAME
               valueFrom:
                 secretKeyRef:

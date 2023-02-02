@@ -18,9 +18,17 @@ spec:
           env:
             # Postgres
             - name: POSTGRES_HOST
-              value: preview-postgres
+              # value: postgres
+              valueFrom: # TODO: 本当にこれしかないのか？
+                configMapKeyRef:
+                  name: api-configmap
+                  key: postgres_host
             - name: POSTGRES_PORT
-              value: "5432"
+              # value: "5432"
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: postgres_port
             - name: POSTGRES_DATABASE
               valueFrom:
                 configMapKeyRef:
@@ -56,9 +64,15 @@ spec:
               value: "0.0.0.0"
             # Postgres
             - name: POSTGRES_HOST
-              value: preview-postgres
+              valueFrom: # TODO: 本当にこれしかないのか？
+                configMapKeyRef:
+                  name: api-configmap
+                  key: postgres_host
             - name: POSTGRES_PORT
-              value: "5432"
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: postgres_port
             - name: POSTGRES_DATABASE
               valueFrom:
                 configMapKeyRef:
@@ -77,8 +91,18 @@ spec:
             - name: PRISMA_DATABASE_URL
               value: postgres://$(POSTGRES_USERNAME):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DATABASE)
             # Neo4j
+            - name: NEO4J_HOST
+              valueFrom: # TODO: 本当にこれしかないのか？
+                configMapKeyRef:
+                  name: api-configmap
+                  key: neo4j_host
+            - name: NEO4J_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: neo4j_port
             - name: NEO4J_URL
-              value: bolt://neo4j:7687
+              value: bolt://$(NEO4J_HOST):$(NEO4J_PORT)
             - name: NEO4J_USERNAME
               valueFrom:
                 secretKeyRef:

@@ -1,8 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-# namespace: otomadb
+namespace: otomadb
 resources:
-  # - ./namespace.yaml
+  # controllers
+  # - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/controller.yaml
+  - ./namespace.yaml
   # api
   - ./api/deployment.yaml
   # neo4j
@@ -14,20 +16,21 @@ resources:
 configurations:
   - ./.kustomize/sealed-secret-config.yaml
 configMapGenerator:
+  - name: api-configmap
   - name: postgres-configmap
     envs:
       - ./postgres/config.env
 secretGenerator:
   - name: postgres-secret
     type: Opaque
-    options:
-      annotations:
-        sealedsecrets.bitnami.com/managed: "true"
+    # options:
+    #   annotations:
+    #     sealedsecrets.bitnami.com/managed: "true"
   - name: neo4j-secret
     type: Opaque
-    options:
-      annotations:
-        sealedsecrets.bitnami.com/managed: "true"
+    # options:
+    #   annotations:
+    #     sealedsecrets.bitnami.com/managed: "true"
 # generatorOptions:
 #   annotations:
 #     sealedsecrets.bitnami.com/managed: "true"
