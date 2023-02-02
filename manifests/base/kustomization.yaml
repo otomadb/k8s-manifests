@@ -9,11 +9,14 @@ resources:
   - ./neo4j/service.yaml
   - ./neo4j/statefulset.yaml
   # postgres
-  - ./postgres/configmap.yaml
   - ./postgres/service.yaml
   - ./postgres/statefulset.yaml
 configurations:
   - ./kustomize/sealed-secret-config.yaml
+configMapGenerator:
+  - name: postgres-configmap
+    envs:
+      - ./postgres/config.env
 secretGenerator:
   - name: postgres-secret
     type: Opaque
