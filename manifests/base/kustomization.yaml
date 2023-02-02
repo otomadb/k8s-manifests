@@ -23,14 +23,14 @@ configMapGenerator:
 secretGenerator:
   - name: postgres-secret
     type: Opaque
-    # options:
-    #   annotations:
-    #     sealedsecrets.bitnami.com/managed: "true"
+    options:
+      annotations:
+        sealedsecrets.bitnami.com/managed: "true"
   - name: neo4j-secret
     type: Opaque
-    # options:
-    #   annotations:
-    #     sealedsecrets.bitnami.com/managed: "true"
+    options:
+      annotations:
+        sealedsecrets.bitnami.com/managed: "true"
 # generatorOptions:
 #   annotations:
 #     sealedsecrets.bitnami.com/managed: "true"
