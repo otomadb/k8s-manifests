@@ -12,7 +12,7 @@ resources:
   - ./postgres/service.yaml
   - ./postgres/statefulset.yaml
 configurations:
-  - ./kustomize/sealed-secret-config.yaml
+  - ./.kustomize/sealed-secret-config.yaml
 configMapGenerator:
   - name: postgres-configmap
     envs:
