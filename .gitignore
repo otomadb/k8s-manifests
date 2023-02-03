@@ -7,11 +7,14 @@ result
 !.vscode/extensions.json
 
 # secret
-*.raw.yml
+*.raw.yaml
 
 # dump
 dump/
 
 # check
-preview.yml
-production.yml
+preview.yaml
+production.yaml
+
+# Certificate
+cert.pem
