@@ -8,3 +8,5 @@ bases:
   - ../../base
 resources:
   - ./ingress.yaml
+  # Postgres
+  - ./postgres/secret.yaml
