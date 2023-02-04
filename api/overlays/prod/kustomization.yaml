@@ -10,3 +10,5 @@ resources:
   - ./ingress.yaml
   # Postgres
   - ./postgres/secret.yaml
+  # Neo4j
+  - ./neo4j/secret.yaml

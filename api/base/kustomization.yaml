@@ -8,12 +8,20 @@ resources:
   # postgres
   - ./postgres/service.yaml
   - ./postgres/statefulset.yaml
+  # neo4j
+  - ./neo4j/service.yaml
+  - ./neo4j/statefulset.yaml
 configMapGenerator:
   - name: postgres-config
     envs:
       - ./postgres/config.env
 secretGenerator:
   - name: postgres-secret
+    type: Opaque
+    options:
+      annotations:
+        sealedsecrets.bitnami.com/managed: "true"
+  - name: neo4j-secret
     type: Opaque
     options:
       annotations:
