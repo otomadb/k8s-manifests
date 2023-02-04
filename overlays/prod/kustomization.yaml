@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namePrefix: prod-
 commonLabels:
-  app.kubernetes.io/env: preview
-  app.kubernetes.io/managed: preview
+  app.kubernetes.io/env: prod
+  app.kubernetes.io/managed: prod
 bases:
   - ../../base
