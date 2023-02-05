@@ -6,7 +6,7 @@ commonLabels:
   app.kubernetes.io/env: prod
   app.kubernetes.io/managed-by: kustomize
 generators:
-  - ./ksops-secret-generator.yaml
+  - ./secret-generator.yaml
 bases:
   - ../../base
 resources:
