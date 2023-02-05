@@ -6,15 +6,11 @@ result
 .vscode/*
 !.vscode/extensions.json
 
-# secret
-*.raw.yaml
-
 # dump
 dump/
 
-# check
-preview.yaml
-production.yaml
+# Secret
+secret.yaml
 
-# Certificate
-cert.pem
+# check
+prod.yaml
