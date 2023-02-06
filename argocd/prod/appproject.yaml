@@ -1,7 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  namespace: argocd
   name: otomadb
 spec:
   description: otomadb for Production Environment
