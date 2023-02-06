@@ -19,4 +19,4 @@ spec:
               service:
                 name: api
                 port:
-                  number: 4000
+                  name: https
