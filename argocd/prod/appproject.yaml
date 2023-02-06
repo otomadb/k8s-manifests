@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  namespace: argocd
+  name: otomadb
+spec:
+  description: otomadb for Production Environment
+  destinations:
+    - name: in-cluster
+      server: https://kubernetes.default.svc
+      namespace: prod-otomadb
+  sourceRepos:
+    - https://github.com/otomad-database/k8s-manifests
+    - https://charts.bitnami.com/bitnami
+    - https://bitnami-labs.github.io/sealed-secrets
+    - https://neo4j.github.io/helm-charts
