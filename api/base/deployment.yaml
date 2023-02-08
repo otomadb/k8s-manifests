@@ -14,7 +14,8 @@ spec:
     spec:
       initContainers:
         - name: migration
-          image: ghcr.io/otomad-database/api-postgres-migration:main@sha256:2318ee4beccace75eb73b0ee35c57e94373218451ae69a883439f9e50bbaf7ae
+          image: ghcr.io/otomad-database/api-postgres-migration:main@sha256:ac843467d5da3904275061eb8b49da5d9e107c0bf2b9da5adda1c1a3b222664c
+          imagePullPolicy: IfNotPresent
           env:
             - name: PRISMA_DATABASE_URL
               valueFrom:
@@ -23,8 +24,8 @@ spec:
                   key: PRISMA_DATABASE_URL
       containers:
         - name: api
-          image: ghcr.io/otomad-database/api:main@sha256:6a6f75f176d8600d009ee5654cfaea681e97b1232c584abde351e8813371696c
-          imagePullPolicy: Always
+          image: ghcr.io/otomad-database/api:main@sha256:7dbdf92ac13ab7bfd990e178422088292c04ecbcf6d3ff5149a8e1b3096a0681
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
           resources:
