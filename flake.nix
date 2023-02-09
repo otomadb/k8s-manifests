@@ -7,16 +7,12 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     flake-utils.url = "github:numtide/flake-utils";
-    yamlfmt = {
-      url = "github:SnO2WMaN/yamlfmt.nix";
-    };
   };
 
   outputs = {
     self,
     nixpkgs,
     flake-utils,
-    yamlfmt,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -30,13 +26,13 @@
       in {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
-            jq
             alejandra
-            yamlfmt.packages.${system}.yamlfmt
+            argocd
+            jq
             kubectl
             kustomize
             sops
-            argocd
+            yamlfmt
           ];
         };
       }
