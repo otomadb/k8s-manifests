@@ -11,10 +11,3 @@ bases:
   - ../../base
 resources:
   - ./ingress.yaml
-images:
-  - name: api-postgres-migration
-    newName: ghcr.io/otomad-database/api-postgres-migration
-    newTag: main
-  - name: api
-    newName: ghcr.io/otomad-database/api
-    newTag: main
