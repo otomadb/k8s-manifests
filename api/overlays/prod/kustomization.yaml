@@ -14,7 +14,7 @@ resources:
 images:
 - name: api
   newName: ghcr.io/otomad-database/api
-  digest: sha256:ce11656899783f1b2def091cd3be7e27b9df4a8ac7f6661d7300c9f55809a1f7
+  digest: sha256:ab6548965f959202847615d22ff946165302a1afa5d8e2c607b45367333c7dd8
 - name: api-postgres-migration
   newName: ghcr.io/otomad-database/api-postgres-migration
   digest: sha256:cabab7e8fee580d24ac4534968614033bc5cb9419e6451e866d8cf16dcc979e0
