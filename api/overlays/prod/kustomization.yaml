@@ -6,8 +6,15 @@ commonLabels:
   app.kubernetes.io/env: prod
   app.kubernetes.io/managed-by: kustomize
 generators:
-  - ./secret-generator.yaml
+- ./secret-generator.yaml
 bases:
-  - ../../base
+- ../../base
 resources:
-  - ./ingress.yaml
+- ./ingress.yaml
+images:
+- name: api
+  newName: ghcr.io/otomad-database/api
+  digest: sha256:238aafdc91f2d6424bd7993a49d991c3d1855c4f13c8840bcdd379f6afaf97ea
+- name: api-postgres-migration
+  newName: ghcr.io/otomad-database/api-postgres-migration
+  digest: sha256:7cc5541ee934772d28a2df46ef7d90039881a3da03616885c1ab0cd6281cec2c
