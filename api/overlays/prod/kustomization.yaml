@@ -12,14 +12,14 @@ bases:
 resources:
 - ./ingress.yaml
 configMapGenerator:
-  - name: api-configmap
-    behavior: merge
-    literals:
-      - domain="otomadb.com"
+- name: api-configmap
+  behavior: merge
+  literals:
+  - domain="otomadb.com"
 images:
 - name: api
   newName: ghcr.io/otomad-database/api
-  digest: sha256:4bd7237d27aca3aaccad06fa299409d6db2a83c82162886f5c5b9912d77bf109
+  digest: sha256:5f95fa093a200e31e2ea42ca7e524755ecd9734a5a2e2e9bcc5baa0dd366bfb8
 - name: api-postgres-migration
   newName: ghcr.io/otomad-database/api-postgres-migration
-  digest: sha256:8f10485577822df5f8850f6e5b5da42f33dac5fd51d2f8071a4d88032a2e3a74
+  digest: sha256:ce4e729a729761ab1c86010f57842382bfefec9c5724b4ef28715f43707564c8
