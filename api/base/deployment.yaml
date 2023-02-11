@@ -33,6 +33,11 @@ spec:
               cpu: "4"
               memory: "512Mi"
           env:
+            - name: DOMAIN
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: domain
             # Postgres
             - name: PRISMA_DATABASE_URL
               valueFrom:
