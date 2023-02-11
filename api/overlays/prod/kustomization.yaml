@@ -14,8 +14,6 @@ resources:
 configMapGenerator:
 - name: api-configmap
   behavior: merge
-  literals:
-  - domain="otomadb.com"
 images:
 - name: api
   newName: ghcr.io/otomad-database/api
