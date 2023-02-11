@@ -14,6 +14,9 @@ resources:
 configMapGenerator:
 - name: api-configmap
   behavior: merge
+  literals:
+    - enable_samesite_none="false"
+    - enable_graphiql="false"
 images:
 - name: api
   newName: ghcr.io/otomad-database/api
