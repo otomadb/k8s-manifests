@@ -17,7 +17,7 @@ spec:
   project: prev-otomadb
   source:
     repoURL: git@github.com:otomad-database/k8s-manifests.git
-    targetRevision: prev
+    targetRevision: main
     path: api/overlays/prev
     kustomize: {}
   syncPolicy:
