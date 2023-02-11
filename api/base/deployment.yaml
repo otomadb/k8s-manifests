@@ -33,6 +33,16 @@ spec:
               cpu: "4"
               memory: "512Mi"
           env:
+            - name: ENABLE_GRAPHIQL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: enable_graphiql
+            - name: ENABLE_SAME_SITE_NONE
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: enable_samesite_none
             # Postgres
             - name: PRISMA_DATABASE_URL
               valueFrom:

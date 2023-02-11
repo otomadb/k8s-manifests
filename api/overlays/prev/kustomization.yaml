@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namePrefix: prev-
+namespace: prev-otomadb
+commonLabels:
+  app.kubernetes.io/env: prev
+  app.kubernetes.io/managed-by: kustomize
+generators:
+  - ./secret-generator.yaml
+bases:
+  - ../../base
+resources:
+  - ./ingress.yaml
+configMapGenerator:
+  - name: api-configmap
+    behavior: merge
+    literals:
+      - enable_samesite_none="true"
+      - enable_graphiql="true"
+images:
+  - name: api
+    newName: ghcr.io/otomad-database/api
+    digest: sha256:4bd7237d27aca3aaccad06fa299409d6db2a83c82162886f5c5b9912d77bf109
+  - name: api-postgres-migration
+    newName: ghcr.io/otomad-database/api-postgres-migration
+    digest: sha256:3a431bd2b31c025dd816d4d00269738eaabe3e50f7b316bf288d88c8507863f1
