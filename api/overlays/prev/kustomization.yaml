@@ -15,7 +15,7 @@ configMapGenerator:
   - name: api-configmap
     behavior: merge
     literals:
-      - domain="vercel.com"
+      - domain="vercel.app"
 images:
   - name: api
     newName: ghcr.io/otomad-database/api
