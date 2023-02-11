@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: otomadb-neo4j
+spec:
+  project: prev-otomadb
+  source:
+    chart: neo4j
+    repoURL: https://neo4j.github.io/helm-charts
+    targetRevision: "5.4.0"
+    helm:
+      releaseName: neo4j
+      parameters:
+        - name: "neo4j.name"
+          value: otomadb-neo4j
+        - name: "volumes.data.mode"
+          value: defaultStorageClass
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prev-otomadb
