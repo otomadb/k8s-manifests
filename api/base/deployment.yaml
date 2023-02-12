@@ -12,16 +12,16 @@ spec:
       labels:
         app: api
     spec:
-      initContainers:
-        - name: migration
-          image: api-postgres-migration
-          imagePullPolicy: IfNotPresent
-          env:
-            - name: PRISMA_DATABASE_URL
-              valueFrom:
-                secretKeyRef:
-                  name: api-secret
-                  key: PRISMA_DATABASE_URL
+      # initContainers:
+      #   - name: migration
+      #     image: api-postgres-migration
+      #     imagePullPolicy: IfNotPresent
+      #     env:
+      #       - name: PRISMA_DATABASE_URL
+      #         valueFrom:
+      #           secretKeyRef:
+      #             name: api-secret
+      #             key: PRISMA_DATABASE_URL
       containers:
         - name: api
           image: api
