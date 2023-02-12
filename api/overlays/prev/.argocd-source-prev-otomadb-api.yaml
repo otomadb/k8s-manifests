@@ -1,4 +1,4 @@
 kustomize:
   images:
-  - api=ghcr.io/otomad-database/api@sha256:370ff63a626dbd1a119926d609485088cd8acdb53f4279b9d7480675f466a393
-  - api-postgres-migration=ghcr.io/otomad-database/api-postgres-migration@sha256:2ee4d575cd9c4ed429a295cb0127e5a497907b106d771b8c68ae94a5c1cbd97b
+  - api=ghcr.io/otomad-database/api@sha256:52479e85e640c47f88921a56ded4f8f91f616e48ab4afeeb1edb6d224b508a28
+  - api-postgres-migration=ghcr.io/otomad-database/api-postgres-migration@sha256:3dd0bf6499230e3f2ec7ecfd017e815d1ebd85aa79bd0d2d2d457fad4727325d
