@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - api=ghcr.io/otomad-database/api@sha256:0cef542d8d20775019aa4c91dffdf2ad3a476d2d2f4173cdef117251b09d4d1f
