@@ -23,4 +23,4 @@ images:
   newTag: latest
 - name: api-postgres-migration
   newName: ghcr.io/otomad-database/api-postgres-migration
-  newTag: latest
+  newTag: c1b7d8ebae139b12c0965eb3686bf8ff78271b8d
