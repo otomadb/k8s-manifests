@@ -5,8 +5,8 @@ namespace: prev-otomadb
 commonLabels:
   app.kubernetes.io/env: prev
   app.kubernetes.io/managed-by: kustomize
-# generators:
-# - ./secret-generator.yaml
+generators:
+- ./secret-generator.yaml
 bases:
 - ../../base
 resources:
