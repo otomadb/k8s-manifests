@@ -36,10 +36,12 @@ spec:
             httpGet:
               path: /graphql/health
               port: 8080
+            initialDelaySeconds: 5
           readinessProbe:
             httpGet:
               path: /graphql/ready
               port: 8080
+            initialDelaySeconds: 5
           env:
             - name: ENABLE_GRAPHIQL
               valueFrom:
