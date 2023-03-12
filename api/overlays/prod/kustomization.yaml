@@ -23,4 +23,4 @@ images:
   digest: sha256:ff81da88765943b6edb27c294025ab322297c177b72c1300028a2e4880ca2b45
 - name: api-postgres-migration
   newName: ghcr.io/otomad-database/api-postgres-migration
-  newTag: 6914be31e0d4d7e10eb6a931cab05e3f3d9345b9
+  newTag: 1bb0829ef0a2928f4ff56ac948c7963e3d79b078
