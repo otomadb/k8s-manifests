@@ -8,7 +8,7 @@ spec:
   source:
     chart: neo4j
     repoURL: https://neo4j.github.io/helm-charts
-    targetRevision: "5.4.0"
+    targetRevision: 5.5.0
     helm:
       releaseName: neo4j
       parameters:
