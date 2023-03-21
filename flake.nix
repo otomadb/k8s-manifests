@@ -33,6 +33,7 @@
             kustomize
             sops
             yamlfmt
+            kubernetes-helm
           ];
         };
       }
