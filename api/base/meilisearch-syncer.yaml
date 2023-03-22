@@ -13,6 +13,7 @@ spec:
           - name: meilisearch-syncer
             image: meilisearch-syncer
             imagePullPolicy: IfNotPresent
+            ttlSecondsAfterFinished: 3600
             env:
               - name: POSTGRES_URL
                 valueFrom:
