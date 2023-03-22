@@ -59,6 +59,12 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: POSTGRES_URL
+            # Postgres
+            - name: MEILISEARCH_URL
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: MEILISEARCH_URL
             # Neo4j
             - name: NEO4J_URL
               valueFrom:
