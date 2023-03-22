@@ -9,8 +9,8 @@ result
 # dump
 dump/
 
-# Secret
-secret.yaml
+# Secrets
+secrets.yaml
 
 # check
 prod.yaml

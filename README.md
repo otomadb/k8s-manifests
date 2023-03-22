@@ -11,3 +11,9 @@
 ```bash
 kubectl apply -k ./argocd/prod
 ```
+
+### Update secrets
+
+```
+sops -e ./secrets.yaml > ./secrets.enc.yaml
+```
