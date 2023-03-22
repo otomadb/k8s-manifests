@@ -11,5 +11,5 @@ spec:
   sourceRepos:
     - git@github.com:otomad-database/k8s-manifests.git
     - https://charts.bitnami.com/bitnami
-    - https://bitnami-labs.github.io/sealed-secrets
     - https://neo4j.github.io/helm-charts
+    - https://meilisearch.github.io/meilisearch-kubernetes
