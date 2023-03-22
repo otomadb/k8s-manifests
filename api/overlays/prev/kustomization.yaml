@@ -26,4 +26,4 @@ images:
   newTag: 1bb0829ef0a2928f4ff56ac948c7963e3d79b078
 - name: meilisearch-syncer
   newName: ghcr.io/otomad-database/meilisearch-syncer
-  digest: sha256:a47c599670c32bba851e2f6d22b7ee37451372becec1bb7b3e74970c2816a73a
+  digest: sha256:80822077d05773cd63e565dc4de62789b1be0cbecc4eaf186af89b61ab990e08
