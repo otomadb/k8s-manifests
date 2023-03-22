@@ -58,7 +58,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: PRISMA_DATABASE_URL
+                  key: POSTGRES_URL
             # Neo4j
             - name: NEO4J_URL
               valueFrom:
