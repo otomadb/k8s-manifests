@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: meilisearch-syncer
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: meilisearch-syncer
+            image: meilisearch-syncer
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: POSTGRES_URL
+                valueFrom:
+                  secretKeyRef:
+                    name: api-secret
+                    key: POSTGRES_URL
+              - name: MEILISEARCH_URL
+                valueFrom:
+                  secretKeyRef:
+                    name: api-secret
+                    key: MEILISEARCH_URL
