@@ -22,7 +22,7 @@ metadata:
 spec:
   project: prev-otomadb
   source:
-    repoURL: git@github.com:otomadb/k8s-manifests.git
+    repoURL: https://github.com/otomadb/k8s-manifests
     targetRevision: main
     path: api/overlays/prev
     kustomize: {}

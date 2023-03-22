@@ -9,7 +9,7 @@ spec:
       server: https://kubernetes.default.svc
       namespace: prod-otomadb
   sourceRepos:
-    - git@github.com:otomadb/k8s-manifests.git
+    - https://github.com/otomadb/k8s-manifests
     - https://charts.bitnami.com/bitnami
     - https://neo4j.github.io/helm-charts
     - https://meilisearch.github.io/meilisearch-kubernetes
