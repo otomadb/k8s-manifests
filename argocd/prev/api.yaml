@@ -7,9 +7,9 @@ metadata:
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/write-back-target: kustomization
     argocd-image-updater.argoproj.io/image-list: |
-      api=ghcr.io/otomad-database/api:latest,
-      meilisearch-syncer=ghcr.io/otomad-database/meilisearch-syncer:latest
-    # ,api-postgres-migration=ghcr.io/otomad-database/api-postgres-migration:latest
+      api=ghcr.io/otomadb/api:latest,
+      meilisearch-syncer=ghcr.io/otomadb/meilisearch-syncer:latest
+    # ,api-postgres-migration=ghcr.io/otomadb/api-postgres-migration:latest
     # api
     argocd-image-updater.argoproj.io/api.update-strategy: digest
     argocd-image-updater.argoproj.io/api.kustomize.image-name: api
@@ -22,7 +22,7 @@ metadata:
 spec:
   project: prev-otomadb
   source:
-    repoURL: git@github.com:otomad-database/k8s-manifests.git
+    repoURL: git@github.com:otomadb/k8s-manifests.git
     targetRevision: main
     path: api/overlays/prev
     kustomize: {}
