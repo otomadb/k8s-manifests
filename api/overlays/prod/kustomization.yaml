@@ -24,3 +24,6 @@ images:
 - name: api-postgres-migration
   newName: ghcr.io/otomad-database/api-postgres-migration
   newTag: 1bb0829ef0a2928f4ff56ac948c7963e3d79b078
+- name: meilisearch-syncer
+  newName: ghcr.io/otomad-database/meilisearch-syncer
+  digest: sha256:80822077d05773cd63e565dc4de62789b1be0cbecc4eaf186af89b61ab990e08
