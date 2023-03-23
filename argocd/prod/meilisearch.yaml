@@ -11,6 +11,9 @@ spec:
     targetRevision: 0.1.49
     helm:
       releaseName: meilisearch
+      parameters:
+        - name: "persistence.enabled"
+          value: "true"
   syncPolicy:
     automated:
       prune: true
