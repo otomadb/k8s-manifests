@@ -27,3 +27,6 @@ images:
 - name: meilisearch-syncer
   newName: ghcr.io/otomadb/meilisearch-syncer
   digest: sha256:80822077d05773cd63e565dc4de62789b1be0cbecc4eaf186af89b61ab990e08
+- name: neo4j-syncer
+  newName: ghcr.io/otomadb/neo4j-syncer
+  digest: sha256:84d4e8a10844ece3c0c588eb03b22d7c51e9833db1d3ea1aa5b2bf4be6459726
