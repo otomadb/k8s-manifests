@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ./deployment.yaml
   - ./meilisearch-syncer.yaml
+  - ./neo4j-syncer.yaml
   - ./service.yaml
 configMapGenerator:
   - name: api-configmap

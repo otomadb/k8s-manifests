@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: neo4j-syncer
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: neo4j-syncer
+            image: neo4j-syncer
+            imagePullPolicy: IfNotPresent
+            ttlSecondsAfterFinished: 3600
+            env:
+              - name: POSTGRES_URL
+                valueFrom:
+                  secretKeyRef:
+                    name: api-secret
+                    key: POSTGRES_URL
+              - name: NEO4J_BOLT_URL
+                valueFrom:
+                  secretKeyRef:
+                    name: api-secret
+                    key: NEO4J_URL
+              - name: NEO4J_USERNAME
+                valueFrom:
+                  secretKeyRef:
+                    name: api-secret
+                    key: NEO4J_USERNAME
+              - name: NEO4J_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: api-secret
+                    key: NEO4J_PASSWORD

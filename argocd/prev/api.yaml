@@ -8,7 +8,8 @@ metadata:
     argocd-image-updater.argoproj.io/write-back-target: kustomization
     argocd-image-updater.argoproj.io/image-list: |
       api=ghcr.io/otomadb/api:latest,
-      meilisearch-syncer=ghcr.io/otomadb/meilisearch-syncer:latest
+      meilisearch-syncer=ghcr.io/otomadb/meilisearch-syncer:latest,
+      neo4j-syncer=ghcr.io/otomadb/neo4j-syncer:latest
     # ,api-postgres-migration=ghcr.io/otomadb/api-postgres-migration:latest
     # api
     argocd-image-updater.argoproj.io/api.update-strategy: digest
@@ -16,9 +17,10 @@ metadata:
     # api-postgres-migration
     # argocd-image-updater.argoproj.io/api-postgres-migration.update-strategy: digest
     # argocd-image-updater.argoproj.io/api-postgres-migration.kustomize.image-name: api-postgres-migration
-    # meilisearch-syncer
     argocd-image-updater.argoproj.io/meilisearch-syncer.update-strategy: digest
     argocd-image-updater.argoproj.io/meilisearch-syncer.kustomize.image-name: meilisearch-syncer
+    argocd-image-updater.argoproj.io/neo4j-syncer.update-strategy: digest
+    argocd-image-updater.argoproj.io/neo4j-syncer.kustomize.image-name: meilisearch-syncer
 spec:
   project: prev-otomadb
   source:
