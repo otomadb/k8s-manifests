@@ -20,7 +20,7 @@ metadata:
     argocd-image-updater.argoproj.io/meilisearch-syncer.update-strategy: digest
     argocd-image-updater.argoproj.io/meilisearch-syncer.kustomize.image-name: meilisearch-syncer
     argocd-image-updater.argoproj.io/neo4j-syncer.update-strategy: digest
-    argocd-image-updater.argoproj.io/neo4j-syncer.kustomize.image-name: meilisearch-syncer
+    argocd-image-updater.argoproj.io/neo4j-syncer.kustomize.image-name: neo4j-syncer
 spec:
   project: prod-otomadb
   source:
