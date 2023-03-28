@@ -25,8 +25,8 @@ images:
   newName: ghcr.io/otomadb/api-postgres-migration
   newTag: 1bb0829ef0a2928f4ff56ac948c7963e3d79b078
 - name: meilisearch-syncer
-  newName: ghcr.io/otomadb/meilisearch-syncer
-  digest: sha256:80822077d05773cd63e565dc4de62789b1be0cbecc4eaf186af89b61ab990e08
+  newName: ghcr.io/otomadb/neo4j-syncer
+  digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
 - name: neo4j-syncer
   newName: ghcr.io/otomadb/neo4j-syncer
   digest: sha256:0dba02bc8530ebb159f4c7c124935809a999503cec5430a296ec44a0e67c442d
