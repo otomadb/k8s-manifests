@@ -53,13 +53,18 @@ spec:
                 configMapKeyRef:
                   name: api-configmap
                   key: enable_samesite_none
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: JWT_SECRET
             # Postgres
             - name: PRISMA_DATABASE_URL
               valueFrom:
                 secretKeyRef:
                   name: api-secret
                   key: POSTGRES_URL
-            # Postgres
+            # Meilisearch
             - name: MEILISEARCH_URL
               valueFrom:
                 secretKeyRef:
