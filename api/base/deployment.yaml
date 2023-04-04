@@ -48,16 +48,6 @@ spec:
                 configMapKeyRef:
                   name: api-configmap
                   key: enable_graphiql
-            - name: ENABLE_SAME_SITE_NONE
-              valueFrom:
-                configMapKeyRef:
-                  name: api-configmap
-                  key: enable_samesite_none
-            - name: JWT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: api-secret
-                  key: JWT_SECRET
             # Postgres
             - name: PRISMA_DATABASE_URL
               valueFrom:
@@ -86,3 +76,14 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: NEO4J_PASSWORD
+            # Auth0
+            - name: AUTH0_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: AUTH0_DOMAIN
+            - name: AUTH0_MANAGEMENT_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: AUTH0_MANAGEMENT_API_TOKEN

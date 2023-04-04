@@ -15,7 +15,6 @@ configMapGenerator:
 - name: api-configmap
   behavior: merge
   literals:
-  - enable_samesite_none="true"
   - enable_graphiql="true"
 images:
 - name: api
