@@ -76,6 +76,9 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: NEO4J_PASSWORD
+            # Redis
+            - name: REDIS_URL
+              value: "redis://localhost:6379"
             # Auth0
             - name: AUTH0_DOMAIN
               valueFrom:
@@ -92,3 +95,12 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: AUTH0_CLIENT_SECRET
+        - name: redis
+          image: redis:7.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379
+          resources:
+            limits:
+              cpu: "1"
+              memory: "256Mi"
