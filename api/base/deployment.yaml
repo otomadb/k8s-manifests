@@ -50,7 +50,7 @@ spec:
                   key: enable_graphiql
             - name: SOUNDCLOUD_CLIENT_ID
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: api-secret
                   key: SOUNDCLOUD_CLIENT_ID
             # Postgres
