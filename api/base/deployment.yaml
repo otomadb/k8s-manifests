@@ -48,6 +48,11 @@ spec:
                 configMapKeyRef:
                   name: api-configmap
                   key: enable_graphiql
+            - name: SOUNDCLOUD_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: api-secret
+                  key: SOUNDCLOUD_CLIENT_ID
             # Postgres
             - name: PRISMA_DATABASE_URL
               valueFrom:
