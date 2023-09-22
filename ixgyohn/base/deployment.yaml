@@ -47,7 +47,7 @@ spec:
               cpu: "1"
               memory: "128Mi"
         - name: imgproxy
-          image: darthsim/imgproxy:3.19.0
+          image: darthsim/imgproxy:v3.19.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
