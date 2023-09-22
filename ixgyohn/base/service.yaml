@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ixgyohn
+spec:
+  type: ClusterIP
+  selector:
+    app: ixgyohn
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 1323
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 1323
