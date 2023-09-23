@@ -11,3 +11,4 @@ resources:
   - ./postgres.yaml
   - ./neo4j.yaml
   - ./meilisearch.yaml
+  - ./imgproxy.yaml

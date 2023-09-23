@@ -20,7 +20,7 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = with inputs; [
-            devshell.overlay
+            devshell.overlays.default
           ];
         };
       in {

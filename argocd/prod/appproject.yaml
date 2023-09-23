@@ -13,3 +13,4 @@ spec:
     - https://charts.bitnami.com/bitnami
     - https://neo4j.github.io/helm-charts
     - https://meilisearch.github.io/meilisearch-kubernetes
+    - https://helm.imgproxy.net
