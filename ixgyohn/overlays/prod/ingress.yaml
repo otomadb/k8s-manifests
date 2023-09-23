@@ -17,4 +17,14 @@ spec:
               service:
                 name: ixgyohn
                 port:
-                  name: https
+                  name: main
+    - host: imgproxy.otomadb.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ixgyohn
+                port:
+                  name: imgproxy

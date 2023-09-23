@@ -7,11 +7,11 @@ spec:
   selector:
     app: ixgyohn
   ports:
-    - name: http
+    - name: main
       protocol: TCP
       port: 80
       targetPort: 1323
-    - name: https
+    - name: imgproxy
       protocol: TCP
-      port: 443
-      targetPort: 1323
+      port: 80
+      targetPort: 8080
