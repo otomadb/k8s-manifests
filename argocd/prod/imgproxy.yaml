@@ -15,13 +15,6 @@ spec:
         releaseName: imgproxy
         valueFiles:
           - $valuesrepo/prod/imgproxy/values.yaml
-        valuesObject:
-          resources:
-            ingress:
-              enabled: true
-              className: nginx
-              hosts:
-                - imgproxy.otomadb.com
   syncPolicy:
     automated:
       prune: true
