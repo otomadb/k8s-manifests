@@ -48,6 +48,13 @@ spec:
                 configMapKeyRef:
                   name: api-configmap
                   key: enable_graphiql
+
+            - name: IXGYOHN_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: ixgyohn.baseUrl
+
             - name: SOUNDCLOUD_CLIENT_ID
               valueFrom:
                 secretKeyRef:

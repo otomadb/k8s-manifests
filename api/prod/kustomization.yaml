@@ -8,6 +8,7 @@ configMapGenerator:
 - behavior: merge
   literals:
   - enable_graphiql="false"
+  - "ixgyohn.baseUrl"="https://images.otomadb.com"
   name: api-configmap
 images:
 - name: api
