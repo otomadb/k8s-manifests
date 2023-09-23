@@ -3,5 +3,12 @@ kind: Kustomization
 resources:
   - ./deployment.yaml
   - ./service.yaml
-configMapGenerator:
-  - name: ixgyohn-configmap
+labels:
+  - includeSelectors: true
+    pairs:
+      app.kubernetes.io/env: prod
+      app.kubernetes.io/managed-by: kustomize
+images:
+  - digest: sha256:04c97ce4687f05584028349b9433e834407b755607799af7dd79e42afd4f93da
+    name: ixgyohn
+    newName: ghcr.io/otomadb/ixgyohn

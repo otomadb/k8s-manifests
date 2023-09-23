@@ -31,12 +31,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: ixgyohn-secret
-                  key: IMGPROXY_KEY
+                  key: imgproxyKey
             - name: IMGPROXY_SALT
               valueFrom:
                 secretKeyRef:
                   name: ixgyohn-secret
-                  key: IMGPROXY_SALT
+                  key: imgproxySalt
         - name: redis
           image: redis:7.0
           imagePullPolicy: IfNotPresent
@@ -46,23 +46,3 @@ spec:
             limits:
               cpu: "1"
               memory: "128Mi"
-        - name: imgproxy
-          image: darthsim/imgproxy:v3.19.0
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 8080
-          resources:
-            limits:
-              cpu: "1"
-              memory: "128Mi"
-          env:
-            - name: IMGPROXY_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: ixgyohn-secret
-                  key: IMGPROXY_KEY
-            - name: IMGPROXY_SALT
-              valueFrom:
-                secretKeyRef:
-                  name: ixgyohn-secret
-                  key: IMGPROXY_SALT

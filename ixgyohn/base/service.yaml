@@ -11,7 +11,3 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 1323
-    - name: imgproxy
-      protocol: TCP
-      port: 80
-      targetPort: 8080
