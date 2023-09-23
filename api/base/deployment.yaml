@@ -52,35 +52,35 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: SOUNDCLOUD_CLIENT_ID
+                  key: soundcloud.clientId
             # Postgres
             - name: PRISMA_DATABASE_URL
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: POSTGRES_URL
+                  key: postgres.url
             # Meilisearch
             - name: MEILISEARCH_URL
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: MEILISEARCH_URL
+                  key: meilisearch.url
             # Neo4j
             - name: NEO4J_URL
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: NEO4J_URL
+                  key: neo4j.url
             - name: NEO4J_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: NEO4J_USERNAME
+                  key: neo4j.username
             - name: NEO4J_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: NEO4J_PASSWORD
+                  key: neo4j.password
             # Redis
             - name: REDIS_URL
               value: "redis://localhost:6379"
@@ -89,27 +89,27 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: AUTH0_DOMAIN
+                  key: auth0.domain
             - name: AUTH0_CLIENT_ID
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: AUTH0_CLIENT_ID
+                  key: auth0.clientId
             - name: AUTH0_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: AUTH0_CLIENT_SECRET
+                  key: auth0.clientSecret
             - name: AUTH0_ADMIN_ROLE_ID
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: AUTH0_ADMIN_ROLE_ID
+                  key: auth0.roleIds.admin
             - name: AUTH0_EDITOR_ROLE_ID
               valueFrom:
                 secretKeyRef:
                   name: api-secret
-                  key: AUTH0_EDITOR_ROLE_ID
+                  key: auth0.roleIds.editor
         - name: redis
           image: redis:7.0
           imagePullPolicy: IfNotPresent
