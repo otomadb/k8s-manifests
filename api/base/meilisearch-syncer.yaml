@@ -10,18 +10,18 @@ spec:
         spec:
           restartPolicy: OnFailure
           containers:
-          - name: meilisearch-syncer
-            image: meilisearch-syncer
-            imagePullPolicy: IfNotPresent
-            ttlSecondsAfterFinished: 3600
-            env:
-              - name: POSTGRES_URL
-                valueFrom:
-                  secretKeyRef:
-                    name: api-secret
-                    key: POSTGRES_URL
-              - name: MEILISEARCH_URL
-                valueFrom:
-                  secretKeyRef:
-                    name: api-secret
-                    key: MEILISEARCH_URL
+            - name: meilisearch-syncer
+              image: meilisearch-syncer
+              imagePullPolicy: IfNotPresent
+              ttlSecondsAfterFinished: 3600
+              env:
+                - name: POSTGRES_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: api-secret
+                      key: postgres.url
+                - name: MEILISEARCH_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: api-secret
+                      key: meilisearch.url
