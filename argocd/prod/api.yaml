@@ -26,7 +26,7 @@ spec:
   source:
     repoURL: https://github.com/otomadb/k8s-manifests
     targetRevision: main
-    path: api/overlays/prod
+    path: api/prod
     kustomize: {}
   syncPolicy:
     automated: {}
