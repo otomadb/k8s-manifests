@@ -4,6 +4,8 @@ namespace: argocd
 namePrefix: prod-
 resources:
   - ./appproject.yaml
+  # sealed-secrets
+  - ./sealed-secrets.yaml
   # services
   - ./api.yaml
   - ./ixgyohn.yaml

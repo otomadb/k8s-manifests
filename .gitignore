@@ -14,3 +14,7 @@ secrets.yaml
 
 # check
 prod.yaml
+
+# Ignore
+*.cert.pem
+*.sealed-secrets-keys-backup.yaml

@@ -6,14 +6,11 @@
 - [ArgoCD](https://argo-cd.readthedocs.io)
   - namespace は`argocd`とする．
 
-### Apply
+### Memo
 
 ```bash
-kubectl apply -k ./argocd/prod
-```
+task prod:apply-projects
 
-### Update secrets
-
-```
-sops -e ./secrets.yaml > ./secrets.enc.yaml
+task prod:sealed-secrets-backup # 鍵のバックアップ
+task prod:encrypt # Secretsの暗号化
 ```

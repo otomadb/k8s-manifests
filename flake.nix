@@ -28,12 +28,16 @@
           packages = with pkgs; [
             alejandra
             argocd
+            kubeseal
             jq
+            yq
             kubectl
             kustomize
             sops
             yamlfmt
             kubernetes-helm
+            cargo-make
+            go-task
           ];
         };
       }

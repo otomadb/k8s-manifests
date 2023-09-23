@@ -1,0 +1,31 @@
+version: "3"
+
+tasks:
+  "prod:apply-projects":
+    cmds:
+      - kubectl apply -k ./argocd/prod
+
+  # ref: https://qiita.com/butterv/items/877b0a499becbabf3398#%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97
+  "prod:sealed-secrets-backup":
+    cmds:
+      - |
+        kubectl get secret \
+          -l sealedsecrets.bitnami.com/sealed-secrets-key=active \
+          -o yaml \
+          -n prod-otomadb \
+        > prod.sealed-secrets-keys-backup.yaml
+      - |
+        cat ./prod.sealed-secrets-keys-backup.yaml \
+        | yq '.items[0].data."tls.crt"' -r \
+        | base64 -d \
+        > prod.cert.pem
+
+  "prod:encrypt":
+    cmds:
+      - |
+        kubeseal \
+          --cert=./prod.cert.pem \
+          --format=yaml \
+        < ./ixgyohn/prod/secrets.yaml \
+        | yamlfmt -in \
+        > ./ixgyohn/prod/secrets.enc.yaml
