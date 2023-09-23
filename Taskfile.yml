@@ -29,3 +29,11 @@ tasks:
         < ./ixgyohn/prod/secrets.yaml \
         | yamlfmt -in \
         > ./ixgyohn/prod/secrets.enc.yaml
+
+      - |
+        kubeseal \
+          --cert=./prod.cert.pem \
+          --format=yaml \
+        < ./api/prod/secrets.yaml \
+        | yamlfmt -in \
+        > ./api/prod/secrets.enc.yaml
