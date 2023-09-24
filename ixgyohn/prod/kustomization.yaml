@@ -7,4 +7,4 @@ resources:
 images:
 - name: ixgyohn
   newName: ghcr.io/otomadb/ixgyohn
-  digest: sha256:0d586c2dbeff7a361b7197f84eece3ac14b80433bde97f134b449d4820d90548
+  digest: sha256:e1baa7db71f0d1fdf0d4dce55813a43cf98e7c9b524cbbb7fe66cde35323a50d
