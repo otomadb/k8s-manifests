@@ -13,7 +13,7 @@ configMapGenerator:
 images:
 - name: api
   newName: ghcr.io/otomadb/api
-  digest: sha256:ff4494c85f9a6e39dee8846ccb63f9fc41371951a8e315466a006288c4cea996
+  digest: sha256:ef603f71a75d3ba0d23e2bbaeb5b3a926c33adc2e2c27b05c6d467ef98e22d68
 - name: api-postgres-migration
   newName: ghcr.io/otomadb/api-postgres-migration
   newTag: 1bb0829ef0a2928f4ff56ac948c7963e3d79b078
