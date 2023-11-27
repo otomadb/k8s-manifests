@@ -68,13 +68,13 @@ spec:
     spec:
       initContainers:
         - name: migration
-          image: ghcr.io/otomadb/nicochuu-migration:1.0.0-rc.1
+          image: ghcr.io/otomadb/nicochuu-migration:1.0.0-rc.2
           env:
             - name: DATABASE_URL
               value: postgresql://user:pass@nicochuu-postgres:5432/test
       containers:
         - name: nicochuu
-          image: ghcr.io/otomadb/nicochuu:1.0.0-rc.1
+          image: ghcr.io/otomadb/nicochuu:1.0.0-rc.2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 58080
