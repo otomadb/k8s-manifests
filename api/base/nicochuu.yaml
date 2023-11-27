@@ -38,6 +38,19 @@ spec:
           requests:
             storage: 2Gi
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nicochuu-postgres
+  labels:
+    app: nicochuu-postgres
+spec:
+  type: NodePort
+  ports:
+    - port: 5432
+  selector:
+    app: nicochuu-postgres
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
