@@ -118,6 +118,9 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: auth0.roleIds.editor
+            # Nicochuu
+            - name: NICOCHUU_BASE_URL
+              value: "http://nicochuu:58080"
         - name: redis
           image: redis:7.0
           imagePullPolicy: IfNotPresent
