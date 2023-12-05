@@ -13,10 +13,10 @@ configMapGenerator:
 images:
 - name: api
   newName: ghcr.io/otomadb/api
-  digest: sha256:403df226c6139c6adfcba40ab4f5d6a57cab2d3bef3fb54f9d8823e2dc881479
+  digest: sha256:a1fac5ae81bcfafa24f69ed4ab86d774b3143143556abfb70834891ace00fe19
 - name: api-postgres-migration
   newName: ghcr.io/otomadb/api-postgres-migration
-  newTag: 20231025041728_soundcloud_regreq_nullable_thumbnail
+  newTag: 20231025055955_bilibili_regreq
 - name: meilisearch-syncer
   newName: ghcr.io/otomadb/meilisearch-syncer
   digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
