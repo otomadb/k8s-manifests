@@ -16,7 +16,7 @@ images:
   digest: sha256:bfbb4f94a4ae767a6d08e09f65a490320b2ce98213dffdb2f41f324836099294
 - name: api-postgres-migration
   newName: ghcr.io/otomadb/api-postgres-migration
-  newTag: 20231214080129_resolve_youtube_regreq2
+  newTag: 20231214201404_nicovideo_video_source_registeredat
 - name: meilisearch-syncer
   newName: ghcr.io/otomadb/meilisearch-syncer
   digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
