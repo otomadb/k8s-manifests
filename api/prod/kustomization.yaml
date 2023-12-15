@@ -1,30 +1,30 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../base
-- ./ingress.yaml
-- ./secrets.enc.yaml
+  - ../base
+  - ./ingress.yaml
+  - ./secrets.enc.yaml
 configMapGenerator:
-- behavior: merge
-  literals:
-  - enable_graphiql="false"
-  - ixgyohn.baseUrl="https://images.otomadb.com"
-  name: api-configmap
+  - behavior: merge
+    literals:
+      - enable_graphiql="false"
+      - ixgyohn.baseUrl="https://images.otomadb.com"
+    name: api-configmap
 images:
-- name: api
-  newName: ghcr.io/otomadb/api
-  digest: sha256:03304096f827e7bd7d09839bcb1f3270676239056e3019f87a4943a6c2df3e04
-- name: api-postgres-migration
-  newName: ghcr.io/otomadb/api-postgres-migration
-  newTag: 20231214201404_nicovideo_video_source_registeredat
-- name: meilisearch-syncer
-  newName: ghcr.io/otomadb/meilisearch-syncer
-  digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
-- name: neo4j-syncer
-  newName: ghcr.io/otomadb/neo4j-syncer
-  digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
+  - name: graphql-api
+    newName: ghcr.io/otomadb/graphql-api
+    digest: sha256:5ba46770c9864db5e316ee38ed251db47732503c17ab32dd60d71a4028a8837e
+  - name: postgres-migration
+    newName: ghcr.io/otomadb/postgres-migration
+    newTag: 20231214201404_nicovideo_video_source_registeredat
+  - name: meilisearch-syncer
+    newName: ghcr.io/otomadb/meilisearch-syncer
+    digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
+  - name: neo4j-syncer
+    newName: ghcr.io/otomadb/neo4j-syncer
+    digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
 labels:
-- includeSelectors: true
-  pairs:
-    app.kubernetes.io/env: prod
-    app.kubernetes.io/managed-by: kustomize
+  - includeSelectors: true
+    pairs:
+      app.kubernetes.io/env: prod
+      app.kubernetes.io/managed-by: kustomize
