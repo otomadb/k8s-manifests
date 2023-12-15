@@ -49,6 +49,11 @@ spec:
                 configMapKeyRef:
                   name: api-configmap
                   key: enable_graphiql
+            - name: ENABLE_INTROSPECTION
+              valueFrom:
+                configMapKeyRef:
+                  name: api-configmap
+                  key: enable_graphql_introspection
 
             - name: IXGYOHN_BASE_URL
               valueFrom:
