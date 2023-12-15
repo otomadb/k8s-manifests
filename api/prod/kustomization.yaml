@@ -13,7 +13,7 @@ configMapGenerator:
 images:
 - name: api
   newName: ghcr.io/otomadb/api
-  digest: sha256:1a6ab2f313b4a421f4bc1bd2c610c31ebcaad78b6254bdd610969ff4b8c2c702
+  digest: sha256:35b5bc1c3f70c2818cecd202eed9b301bdfa6a700cdb8e6250b9ad180820ea52
 - name: api-postgres-migration
   newName: ghcr.io/otomadb/api-postgres-migration
   newTag: 20231214201404_nicovideo_video_source_registeredat
