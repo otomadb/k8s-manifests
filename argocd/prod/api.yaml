@@ -9,6 +9,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: |
       graphql-api=ghcr.io/otomadb/graphql-api:latest,
       postgres-migration=ghcr.io/otomadb/api-postgres-migration,
+      nicovideo-updater=ghcr.io/otomadb/nicovideo-updater:latest,
       meilisearch-syncer=ghcr.io/otomadb/meilisearch-syncer:latest,
       neo4j-syncer=ghcr.io/otomadb/neo4j-syncer:latest
     # graphql-api
@@ -17,6 +18,9 @@ metadata:
     # postgres-migration
     argocd-image-updater.argoproj.io/postgres-migration.update-strategy: latest
     argocd-image-updater.argoproj.io/postgres-migration.kustomize.image-name: postgres-migration
+    # nicovideo-updater
+    argocd-image-updater.argoproj.io/nicovideo-updater.update-strategy: digest
+    argocd-image-updater.argoproj.io/nicovideo-updater.kustomize.image-name: nicovideo-updater
     # meilisearch syncer
     argocd-image-updater.argoproj.io/meilisearch-syncer.update-strategy: digest
     argocd-image-updater.argoproj.io/meilisearch-syncer.kustomize.image-name: meilisearch-syncer

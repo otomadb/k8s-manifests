@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nicovideo-updater
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: nicovideo-updater
+              image: nicovideo-updater
+              imagePullPolicy: IfNotPresent
+              ttlSecondsAfterFinished: 3600
+              env:
+                - name: PRISMA_DATABASE_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: api-secret
+                      key: postgres.url
