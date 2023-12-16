@@ -8,7 +8,7 @@ metadata:
     argocd-image-updater.argoproj.io/write-back-target: kustomization
     argocd-image-updater.argoproj.io/image-list: |
       graphql-api=ghcr.io/otomadb/graphql-api:latest,
-      postgres-migration=ghcr.io/otomadb/api-postgres-migration,
+      postgres-migration=ghcr.io/otomadb/postgres-migration,
       nicovideo-updater=ghcr.io/otomadb/nicovideo-updater:latest,
       meilisearch-syncer=ghcr.io/otomadb/meilisearch-syncer:latest,
       neo4j-syncer=ghcr.io/otomadb/neo4j-syncer:latest
