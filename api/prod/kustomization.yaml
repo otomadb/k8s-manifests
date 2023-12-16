@@ -14,7 +14,7 @@ configMapGenerator:
 images:
 - name: graphql-api
   newName: ghcr.io/otomadb/graphql-api
-  digest: sha256:7ac06dbdef2e9d15e2147a7f3db3f357977e03e9c3b039dfd12923ac891197c4
+  digest: sha256:a191c0cbe98bda6a8c90f9c81dfd5e4c39176b4dd60a51c04ad912802508a5fa
 - name: postgres-migration
   newName: ghcr.io/otomadb/api-postgres-migration
   newTag: 20231214201404_nicovideo_video_source_registeredat
@@ -26,7 +26,7 @@ images:
   digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
 - name: nicovideo-updater
   newName: ghcr.io/otomadb/nicovideo-updater
-  digest: sha256:50830c56026f0e6b425ca86170e53d88afde43222d82b572618696b382e5dc29
+  digest: sha256:b443f3c2727bedb8b67c1d6d31bba68b3e5da6094f99d45f698cdca034039e53
 labels:
 - includeSelectors: true
   pairs:
