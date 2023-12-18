@@ -26,7 +26,7 @@ images:
   digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
 - name: nicovideo-updater
   newName: ghcr.io/otomadb/nicovideo-updater
-  digest: sha256:535cbbd3362ba9a163af6a42b3f4c1c1d62556d1af64f30f8cd210b914452743
+  digest: sha256:b5fa36a80aa5d6825136c389dec3a6addf543d9807e908c3f6a0c3dc331e17c7
 labels:
 - includeSelectors: true
   pairs:
