@@ -6,5 +6,6 @@ resources:
   - ./neo4j-syncer.yaml
   - ./nicochuu.yaml
   - ./nicovideo-updater.yaml
+  - ./ixgyohn.yaml
 configMapGenerator:
   - name: api-configmap

@@ -9,7 +9,6 @@ configMapGenerator:
     literals:
       - enable_graphiql="false"
       - enable_graphql_introspection="true"
-      - ixgyohn.baseUrl="https://images.otomadb.com"
     name: api-configmap
 images:
   - name: graphql-api
