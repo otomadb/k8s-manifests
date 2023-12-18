@@ -1,34 +1,37 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../base
-- ./ingress.yaml
-- ./secrets.enc.yaml
+  - ../base
+  - ./ingress.yaml
+  - ./secrets.enc.yaml
 configMapGenerator:
-- behavior: merge
-  literals:
-  - enable_graphiql="false"
-  - enable_graphql_introspection="true"
-  - ixgyohn.baseUrl="https://images.otomadb.com"
-  name: api-configmap
+  - behavior: merge
+    literals:
+      - enable_graphiql="false"
+      - enable_graphql_introspection="true"
+      - ixgyohn.baseUrl="https://images.otomadb.com"
+    name: api-configmap
 images:
-- name: graphql-api
-  newName: ghcr.io/otomadb/graphql-api
-  digest: sha256:773f5bc802671555a864105637b7f99f44c1c58754313cf98378375768334728
-- name: postgres-migration
-  newName: ghcr.io/otomadb/postgres-migration
-  newTag: 20231216122702_is_original
-- name: meilisearch-syncer
-  newName: ghcr.io/otomadb/meilisearch-syncer
-  digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
-- name: neo4j-syncer
-  newName: ghcr.io/otomadb/neo4j-syncer
-  digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
-- name: nicovideo-updater
-  newName: ghcr.io/otomadb/nicovideo-updater
-  digest: sha256:6fb279a4a35343abd9b8aa4b5ff561191d212549d921880b4a82ff208f17b447
+  - name: graphql-api
+    newName: ghcr.io/otomadb/graphql-api
+    digest: sha256:773f5bc802671555a864105637b7f99f44c1c58754313cf98378375768334728
+  - name: postgres-migration
+    newName: ghcr.io/otomadb/postgres-migration
+    newTag: 20231216122702_is_original
+  - name: meilisearch-syncer
+    newName: ghcr.io/otomadb/meilisearch-syncer
+    digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
+  - name: neo4j-syncer
+    newName: ghcr.io/otomadb/neo4j-syncer
+    digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
+  - name: nicovideo-updater
+    newName: ghcr.io/otomadb/nicovideo-updater
+    digest: sha256:6fb279a4a35343abd9b8aa4b5ff561191d212549d921880b4a82ff208f17b447
+  - name: ixgyohn
+    newName: ghcr.io/otomadb/ixgyohn
+    digest: sha256:4d76bead1eaf5d668dd61a29d5ce19914503401df731952000aa2e1c3822885b
 labels:
-- includeSelectors: true
-  pairs:
-    app.kubernetes.io/env: prod
-    app.kubernetes.io/managed-by: kustomize
+  - includeSelectors: true
+    pairs:
+      app.kubernetes.io/env: prod
+      app.kubernetes.io/managed-by: kustomize
