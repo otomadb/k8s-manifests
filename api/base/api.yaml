@@ -123,6 +123,9 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: auth0.roleIds.editor
+            # Ixgyohn
+            - name: IXGYOHN_BASE_URL
+              value: "http://ixgyohn:38080"
             # Nicochuu
             - name: NICOCHUU_BASE_URL
               value: "http://nicochuu:58080"

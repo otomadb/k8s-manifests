@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ixgyohn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ixgyohn
+  template:
+    metadata:
+      labels:
+        app: ixgyohn
+    spec:
+      containers:
+        - name: ixgyohn
+          image: ixgyohn
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 38080
+          resources:
+            limits:
+              cpu: "1"
+              memory: "256Mi"
+          env:
+            - name: IMGPROXY_URL
+              value: "https://imgproxy.otomadb.com"
+            - name: IMGPROXY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: imgproxy.key
+            - name: IMGPROXY_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: imgproxy.salt
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ixgyohn
+spec:
+  type: NodePort
+  ports:
+    - port: 38080
+  selector:
+    app: ixgyohn

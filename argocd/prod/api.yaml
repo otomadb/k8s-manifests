@@ -11,7 +11,8 @@ metadata:
       postgres-migration=ghcr.io/otomadb/postgres-migration,
       nicovideo-updater=ghcr.io/otomadb/nicovideo-updater:latest,
       meilisearch-syncer=ghcr.io/otomadb/meilisearch-syncer:latest,
-      neo4j-syncer=ghcr.io/otomadb/neo4j-syncer:latest
+      neo4j-syncer=ghcr.io/otomadb/neo4j-syncer:latest,
+      ixgyohn=ghcr.io/otomadb/ixgyohn:latest
     # graphql-api
     argocd-image-updater.argoproj.io/graphql-api.update-strategy: digest
     argocd-image-updater.argoproj.io/graphql-api.kustomize.image-name: graphql-api
@@ -27,6 +28,9 @@ metadata:
     # neo4j syncer
     argocd-image-updater.argoproj.io/neo4j-syncer.update-strategy: digest
     argocd-image-updater.argoproj.io/neo4j-syncer.kustomize.image-name: neo4j-syncer
+    # ixgyohn
+    argocd-image-updater.argoproj.io/ixgyohn.update-strategy: digest
+    argocd-image-updater.argoproj.io/ixgyohn.kustomize.image-name: ixgyohn
 spec:
   project: prod-otomadb
   source:

@@ -8,7 +8,6 @@ resources:
   - ./sealed-secrets.yaml
   # services
   - ./api.yaml
-  - ./ixgyohn.yaml
   # middlewares
   - ./postgres.yaml
   - ./neo4j.yaml
