@@ -25,7 +25,7 @@ images:
   digest: sha256:464a4dd88d281fc8fdf79f909fcda6349a3cde44f04d5f447c8a522723851025
 - name: nicovideo-updater
   newName: ghcr.io/otomadb/nicovideo-updater
-  digest: sha256:901f9b910838085639321c789a0d6808fb001b0276d7e96b7e32915fa39d0290
+  digest: sha256:cc59c663145e620d5088a9a4eb9bdaca52d4fbb0efc5769db30d878ee969f172
 - name: ixgyohn
   newName: ghcr.io/otomadb/ixgyohn
   digest: sha256:52ef0b5567daadef49bb6b1a10848148383bf86e82b5793bb3e9791909e96319
