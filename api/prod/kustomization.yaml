@@ -28,7 +28,7 @@ images:
   digest: sha256:a9f90d62358e71bddfe856e98fb64a6dc6755d921cb9e2f7f9073debb089e64e
 - name: ixgyohn
   newName: ghcr.io/otomadb/ixgyohn
-  digest: sha256:7c7afbfbb9435f00da48e7aecbee5cc1bb10f0cc2b001ce860bd1a1f7f4f7142
+  digest: sha256:52ef0b5567daadef49bb6b1a10848148383bf86e82b5793bb3e9791909e96319
 labels:
 - includeSelectors: true
   pairs:
