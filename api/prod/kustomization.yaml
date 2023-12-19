@@ -13,7 +13,7 @@ configMapGenerator:
 images:
 - name: graphql-api
   newName: ghcr.io/otomadb/graphql-api
-  digest: sha256:f2139de98a34f880462427c55f5431e7052fbc65bbd8cffa1aeafe416522050e
+  digest: sha256:9461b4b606aac782a5a1fce3cc7a0901b0c192ec1990f784ae230d287674975b
 - name: postgres-migration
   newName: ghcr.io/otomadb/postgres-migration
   newTag: 20231219184638_video_title_id
