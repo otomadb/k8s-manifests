@@ -24,6 +24,8 @@ spec:
               cpu: "1"
               memory: "256Mi"
           env:
+            - name: REDIS_URL
+              value: "redis://localhost:6379"
             - name: IMGPROXY_URL
               value: "https://imgproxy.otomadb.com"
             - name: IMGPROXY_KEY
@@ -36,6 +38,15 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: imgproxy.salt
+        - name: redis
+          image: redis:7.2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379
+          resources:
+            limits:
+              cpu: "0.25"
+              memory: "128Mi"
 ---
 apiVersion: v1
 kind: Service
