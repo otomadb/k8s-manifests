@@ -3,10 +3,11 @@ kind: Job
 metadata:
   name: postgres-migration
 spec:
+  completions: 1
+  parallelism: 1
+  backOffLimit: 2
   template:
     spec:
-      parallelism: 1
-      backOffLimit: 2
       containers:
         - name: postgres-migration
           image: postgres-migration
@@ -17,3 +18,4 @@ spec:
                 secretKeyRef:
                   name: api-secret
                   key: postgres.url
+              restartPolicy: Never
