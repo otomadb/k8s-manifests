@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-migration
+spec:
+  template:
+    spec:
+      parallelism: 1
+      backOffLimit: 2
+      containers:
+        - name: postgres-migration
+          image: postgres-migration
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PRISMA_DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: api-secret
+                  key: postgres.url
