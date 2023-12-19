@@ -16,7 +16,7 @@ images:
   digest: sha256:f2139de98a34f880462427c55f5431e7052fbc65bbd8cffa1aeafe416522050e
 - name: postgres-migration
   newName: ghcr.io/otomadb/postgres-migration
-  newTag: 20231219184244_video_title_locale
+  newTag: 20231219184638_video_title_id
 - name: meilisearch-syncer
   newName: ghcr.io/otomadb/meilisearch-syncer
   digest: sha256:a4f6946a6d58ac027b1795ebb98a65e8eb304260636ba9eb9d45da7e45177b65
